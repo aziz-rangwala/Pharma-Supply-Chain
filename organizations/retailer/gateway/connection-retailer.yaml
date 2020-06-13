@@ -1,0 +1,64 @@
+---
+name: pharma-chain-retailer
+version: 1.0.0
+client:
+  organization: retailer
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  retailer:
+    mspid: retailerMSP
+    peers:
+    - peer0.retailer.example.com
+    certificateAuthorities:
+    - ca.retailer.example.com
+peers:
+  peer0.retailer.example.com:
+    url: grpcs://localhost:5051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICaDCCAg6gAwIBAgIRAMkfGosYRJGSE9BuDZMHRLIwCgYIKoZIzj0EAwIwfjEL
+        MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+        cmFuY2lzY28xHTAbBgNVBAoTFHJldGFpbGVyLmV4YW1wbGUuY29tMSMwIQYDVQQD
+        Exp0bHNjYS5yZXRhaWxlci5leGFtcGxlLmNvbTAeFw0yMDA2MDYwNjIxMDBaFw0z
+        MDA2MDQwNjIxMDBaMH4xCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlh
+        MRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMR0wGwYDVQQKExRyZXRhaWxlci5leGFt
+        cGxlLmNvbTEjMCEGA1UEAxMadGxzY2EucmV0YWlsZXIuZXhhbXBsZS5jb20wWTAT
+        BgcqhkjOPQIBBggqhkjOPQMBBwNCAAQ3Gn0VtRAmyErLt7x/kwFUcOBiKql/Sv1I
+        6aREYtAqiWowdXw9BLXWK7XPbUP+keTRv2+fVEZ+MINbBnZumhmpo20wazAOBgNV
+        HQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1Ud
+        EwEB/wQFMAMBAf8wKQYDVR0OBCIEIGVntVBXdRgKKSkZ2t/1j7CcnCIieIuohoYO
+        v7rj3OPNMAoGCCqGSM49BAMCA0gAMEUCIQCXlaowr4Z9G75dztHrhVnDF1reVEr3
+        WhIgC7VfoG4qAAIgc7dcUWamBEN5K8j3YqZVqzGTyhg3mILoREZifCKJ4VU=
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer0.retailer.example.com
+      hostnameOverride: peer0.retailer.example.com
+certificateAuthorities:
+  ca.retailer.example.com:
+    url: https://localhost:5054
+    caName: ca-retailer
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICYjCCAgegAwIBAgIQWRlAsKGk0BKLB6F2LbkQnzAKBggqhkjOPQQDAjB7MQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEdMBsGA1UEChMUcmV0YWlsZXIuZXhhbXBsZS5jb20xIDAeBgNVBAMT
+        F2NhLnJldGFpbGVyLmV4YW1wbGUuY29tMB4XDTIwMDYwNjA2MjEwMFoXDTMwMDYw
+        NDA2MjEwMFowezELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAU
+        BgNVBAcTDVNhbiBGcmFuY2lzY28xHTAbBgNVBAoTFHJldGFpbGVyLmV4YW1wbGUu
+        Y29tMSAwHgYDVQQDExdjYS5yZXRhaWxlci5leGFtcGxlLmNvbTBZMBMGByqGSM49
+        AgEGCCqGSM49AwEHA0IABDAKs9E+uj89DcC67YS1pjvAo293BVLYnyiEMk15+XV7
+        7LyUYGFCeI2duFq0Kla8mnbelitq/8U8Zw88gGMMugajbTBrMA4GA1UdDwEB/wQE
+        AwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUw
+        AwEB/zApBgNVHQ4EIgQgpC3cupitXF22tiq9FOFXUopWrHAizrfmBVV1lnIZYx0w
+        CgYIKoZIzj0EAwIDSQAwRgIhAOYrhiTLxjb7xn1wzevlft6RoXwQbGJDUGgar5nv
+        UnOQAiEAheu9o8YI1b1PrQ5EEyBhgjufZSnajckyxDXskDfe5nc=
+        -----END CERTIFICATE-----
+        
+    httpOptions:
+      verify: false

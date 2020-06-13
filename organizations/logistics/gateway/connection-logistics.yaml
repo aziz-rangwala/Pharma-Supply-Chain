@@ -1,0 +1,65 @@
+---
+name: pharma-chain-logistics
+version: 1.0.0
+client:
+  organization: logistics
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  logistics:
+    mspid: logisticsMSP
+    peers:
+    - peer0.logistics.example.com
+    certificateAuthorities:
+    - ca.logistics.example.com
+peers:
+  peer0.logistics.example.com:
+    url: grpcs://localhost:9051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICbzCCAhSgAwIBAgIRAO0t1DRx5RqRnM2SRtZQAEgwCgYIKoZIzj0EAwIwgYAx
+        CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+        RnJhbmNpc2NvMR4wHAYDVQQKExVsb2dpc3RpY3MuZXhhbXBsZS5jb20xJDAiBgNV
+        BAMTG3Rsc2NhLmxvZ2lzdGljcy5leGFtcGxlLmNvbTAeFw0yMDA2MDYwNjIxMDBa
+        Fw0zMDA2MDQwNjIxMDBaMIGAMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZv
+        cm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEeMBwGA1UEChMVbG9naXN0aWNz
+        LmV4YW1wbGUuY29tMSQwIgYDVQQDExt0bHNjYS5sb2dpc3RpY3MuZXhhbXBsZS5j
+        b20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARNjXNwGb5hntDSBixhatig76oL
+        +R41yLFuysAvAdMTKG0ebuANf2KkIjukhyl8TXCwwmIuHdGYr0vnaekt3teNo20w
+        azAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMB
+        MA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEID63GZwBTQThAlZ1YWrfes3TLgfK
+        1mgEBcFQ8qlWryN9MAoGCCqGSM49BAMCA0kAMEYCIQCEoP7qvMSvDE+EjRKsH9lS
+        7wTWL0YNSmvnF6so5NzJfQIhAJ/Kq4B1JPw3+7VUivwiP6IPrne1PwH02HphEuCK
+        EI/g
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer0.logistics.example.com
+      hostnameOverride: peer0.logistics.example.com
+certificateAuthorities:
+  ca.logistics.example.com:
+    url: https://localhost:8054
+    caName: ca-logistics
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICZDCCAgugAwIBAgIQHz6xSlCeH6dDwQ0DQMD99jAKBggqhkjOPQQDAjB9MQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEeMBwGA1UEChMVbG9naXN0aWNzLmV4YW1wbGUuY29tMSEwHwYDVQQD
+        ExhjYS5sb2dpc3RpY3MuZXhhbXBsZS5jb20wHhcNMjAwNjA2MDYyMTAwWhcNMzAw
+        NjA0MDYyMTAwWjB9MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEW
+        MBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEeMBwGA1UEChMVbG9naXN0aWNzLmV4YW1w
+        bGUuY29tMSEwHwYDVQQDExhjYS5sb2dpc3RpY3MuZXhhbXBsZS5jb20wWTATBgcq
+        hkjOPQIBBggqhkjOPQMBBwNCAAREncQhfk9SzxkXOaQvCPSpLI6NcTqjC3HTE7hE
+        YJJB9JN9nU8cjG+KB+3p4lYYGrsNocPgZ+Q0S2/OGfXirf3bo20wazAOBgNVHQ8B
+        Af8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB
+        /wQFMAMBAf8wKQYDVR0OBCIEILVDK/djTJiK9g/qEA/Hrd5uba0UYANNXN3/mw5E
+        1lwHMAoGCCqGSM49BAMCA0cAMEQCIFYl5cO97fwR9xci/aj5zOuO31fjNfa2izm0
+        GkOPoozUAiA4xd4yvY2GAbBm8iH8h76al6m3OJ2zw+t+rQWQJk/VaQ==
+        -----END CERTIFICATE-----
+        
+    httpOptions:
+      verify: false

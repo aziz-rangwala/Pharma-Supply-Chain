@@ -1,0 +1,49 @@
+{
+    "name": "pharma-chain-logistics",
+    "version": "1.0.0",
+    "client": {
+        "organization": "logistics",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "logistics": {
+            "mspid": "logisticsMSP",
+            "peers": [
+                "peer0.logistics.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.logistics.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.logistics.example.com": {
+            "url": "grpcs://localhost:9051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICbzCCAhSgAwIBAgIRAO0t1DRx5RqRnM2SRtZQAEgwCgYIKoZIzj0EAwIwgYAx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMR4wHAYDVQQKExVsb2dpc3RpY3MuZXhhbXBsZS5jb20xJDAiBgNV\nBAMTG3Rsc2NhLmxvZ2lzdGljcy5leGFtcGxlLmNvbTAeFw0yMDA2MDYwNjIxMDBa\nFw0zMDA2MDQwNjIxMDBaMIGAMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZv\ncm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEeMBwGA1UEChMVbG9naXN0aWNz\nLmV4YW1wbGUuY29tMSQwIgYDVQQDExt0bHNjYS5sb2dpc3RpY3MuZXhhbXBsZS5j\nb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARNjXNwGb5hntDSBixhatig76oL\n+R41yLFuysAvAdMTKG0ebuANf2KkIjukhyl8TXCwwmIuHdGYr0vnaekt3teNo20w\nazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMB\nMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEID63GZwBTQThAlZ1YWrfes3TLgfK\n1mgEBcFQ8qlWryN9MAoGCCqGSM49BAMCA0kAMEYCIQCEoP7qvMSvDE+EjRKsH9lS\n7wTWL0YNSmvnF6so5NzJfQIhAJ/Kq4B1JPw3+7VUivwiP6IPrne1PwH02HphEuCK\nEI/g\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.logistics.example.com",
+                "hostnameOverride": "peer0.logistics.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.logistics.example.com": {
+            "url": "https://localhost:8054",
+            "caName": "ca-logistics",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICZDCCAgugAwIBAgIQHz6xSlCeH6dDwQ0DQMD99jAKBggqhkjOPQQDAjB9MQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEeMBwGA1UEChMVbG9naXN0aWNzLmV4YW1wbGUuY29tMSEwHwYDVQQD\nExhjYS5sb2dpc3RpY3MuZXhhbXBsZS5jb20wHhcNMjAwNjA2MDYyMTAwWhcNMzAw\nNjA0MDYyMTAwWjB9MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEW\nMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEeMBwGA1UEChMVbG9naXN0aWNzLmV4YW1w\nbGUuY29tMSEwHwYDVQQDExhjYS5sb2dpc3RpY3MuZXhhbXBsZS5jb20wWTATBgcq\nhkjOPQIBBggqhkjOPQMBBwNCAAREncQhfk9SzxkXOaQvCPSpLI6NcTqjC3HTE7hE\nYJJB9JN9nU8cjG+KB+3p4lYYGrsNocPgZ+Q0S2/OGfXirf3bo20wazAOBgNVHQ8B\nAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB\n/wQFMAMBAf8wKQYDVR0OBCIEILVDK/djTJiK9g/qEA/Hrd5uba0UYANNXN3/mw5E\n1lwHMAoGCCqGSM49BAMCA0cAMEQCIFYl5cO97fwR9xci/aj5zOuO31fjNfa2izm0\nGkOPoozUAiA4xd4yvY2GAbBm8iH8h76al6m3OJ2zw+t+rQWQJk/VaQ==\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}
