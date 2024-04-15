@@ -1,3 +1,3 @@
-## Running the network
+## Medical Supply Chain
 
-Before you run the network, you need to follow the instructions to [Install the Samples, Binaries and Docker Images](https://hyperledger-fabric.readthedocs.io/en/latest/install.html) in the Hyperledger Fabric documentation.
+Say no to Counterfeit Products!
